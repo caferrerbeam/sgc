@@ -15,13 +15,13 @@ Sistema de gestion de credito. compuesto por 2 partes:
 proyecto para enviar las notificaciones que llegan por esta cola *notifications_queue*
 los mensajes que llegan por aca tienen el user_id que es a quien se le enviara la notificacion. el servicio tiene la BD de usuarios con sus correos y numeros mobiles.  los usuarios se crean en el servicio de **users** se emite un mensaje a la cola *users_created_queue* y en este servicio se debe almacenar el user_id, mail y mobileNumber. este proyecto ya trae implementado el componente para enviar [mail](notificator/src/main/java/co/edu/eam/sistemasdistribuidos/borrownotificator/utils/EmailSender.java) y [SMS](notificator/src/main/java/co/edu/eam/sistemasdistribuidos/borrownotificator/utils/SmsSender.java) que deben ser usados para la resolucion de esta actividad. Cuando se notifica el resultado del estudio ya sea por SMS o correo se debe enviar un mensaje a la cola de *notifications_result_queue* para que el SGC actualice el registro de la solicitud de prestamo.
 
-## Users
+### Users
 Proyecto que administra la gestion de los usuarios. cuando se crea un usuario se debe emitir un mensaje a la cola *users_created_queue* para que el servicio de notificaciones registre la informacion del numero de celular y correo del usuario.
 
-# Asignacion
+## Asignacion
 Este examen esta pensado para 4 personas y las asignaciones son:
 
-## Estudiante 1
+### Estudiante 1
 1. **API solicitar préstamo**.
    ```
     URL: /api/borrow/request
@@ -47,7 +47,7 @@ Este examen esta pensado para 4 personas y las asignaciones son:
 
 3. **consumir creación de usuario**. consumir el mensaje que llega de la cola `users_created_queue` y almacenar en la tabla `users_notification_data` los datos necesarios. esto se debe hacer en el proyecto de [notificaciones](notificator)
 
-## Estudiante 2
+### Estudiante 2
 1. **Api consultar solicitud préstamo** consultar una solicitud de prestamo. [SGC](sgc)
    ```
    URL /api/borrows/request/{idrequest}
@@ -63,7 +63,7 @@ Este examen esta pensado para 4 personas y las asignaciones son:
 3. **Producir notificación resultado solicitud**
    producir a la cola `notifications_queue` el resultado del procesamiento de la solicitud. [Proyecto notificaciones](notificator)
 
-## Estudiante 3
+### Estudiante 3
 1. **Api crear usuario**. [Proyecto Users](users)
    ```
     URL: /api/users/
@@ -87,7 +87,7 @@ Este examen esta pensado para 4 personas y las asignaciones son:
 
    Consumir de la cola `notifications_result_queue` y marcar el registro de solicitud de credito en `notified = true`.
 
-## Estudiante 4
+### Estudiante 4
 1. **API consultar usuario.**[Proyecto Users](users).
 
    
@@ -106,7 +106,7 @@ Este examen esta pensado para 4 personas y las asignaciones son:
 
     Cuando se notifique la solicitud enviar a la cola `notifications_result_queue` el id de la solicitud.
 
-# Diagrama de secuencia
+## Diagrama de secuencia
 
 
 
