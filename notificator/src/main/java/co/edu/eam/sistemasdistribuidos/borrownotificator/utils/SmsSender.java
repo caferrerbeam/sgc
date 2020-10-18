@@ -7,12 +7,12 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SmsNotifier {
+public class SmsSender {
 
     @Value("${sms.from}")
     private String from;
 
-    @Value("${sms.apikey}")
+    @Value("${sms.account}")
     private String accountSID;
 
     @Value("${sms.token}")
@@ -20,6 +20,11 @@ public class SmsNotifier {
 
 
     public void send(String to, String message) {
+
+        if(!to.startsWith("+")) {
+            to += "+" + to;
+        }
+
         TwilioRestClient client = new TwilioRestClient.Builder(accountSID, authToken).build();
         new MessageCreator(
                 new PhoneNumber(to),
