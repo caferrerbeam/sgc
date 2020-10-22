@@ -14,6 +14,7 @@ public class UserNotificationData implements Serializable {
   @GeneratedValue
   private Long id;
 
+
   private String mobileNumber;
 
   private String email;

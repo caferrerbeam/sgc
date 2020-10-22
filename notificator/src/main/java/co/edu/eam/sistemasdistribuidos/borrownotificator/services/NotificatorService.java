@@ -28,21 +28,21 @@ public class NotificatorService {
    * tener en cuenta que si el usuario no tiene correo no se le debe enviar correo,
    * si no tiene celular, no se le debe enviar celular.
    */
-  public void notifyBorrowRequestToUser(long id,String mensaje, String asunto, Long borrow_request_id) throws Exception {
+  public void notifyBorrowRequestToUser(Long id,String mensaje, String asunto, Long borrow_request_id) throws Exception {
     UserNotificationData datos = UserNotificationDataRepository.findById(id).get();
     String email = datos.getEmail();
     String numero = datos.getMobileNumber();
 
 
     System.out.println("este es el email y el numero "+email+" "+numero);
-    //if(email.length()>0){
-      //System.out.println("enviando correo");
-    //try {
-      //emailSender.sendEmail(asunto, email, mensaje);
-    //}catch (Exception e){
-      //System.out.println("no se pudo enviar email"+e);
-    //}
-    //}
+    if(email.length()>0){
+      System.out.println("enviando correo");
+    try {
+      emailSender.sendEmail(asunto, email, mensaje);
+    }catch (Exception e){
+      System.out.println("no se pudo enviar email"+e);
+    }
+    }
     System.out.println("el numero no esta vacio ? "+!numero.isEmpty());
     //funciona solo con numeros que esten verificados en Twilio si no estan no funciona
     if(!numero.isEmpty()){

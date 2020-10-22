@@ -1,8 +1,6 @@
 package co.edu.eam.sistemasdistribuidos.borrownotificator.producers;
 
-import co.edu.eam.sistemasdistribuidos.borrownotificator.models.UserNotificationData;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.springframework.amqp.core.DirectExchange;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -33,12 +31,8 @@ public class ProcessorQueueProducer {
     // con esta forma ProcessorQueueProducer.notifyBorrowRequestNotification(e ingresa el parametro del service);
     //el parametro se obtiene hay en el notificatorService
 
-    //falta consultar en la bd y enviar notificaciones por email
-    String json= "{'id_solicitud' :"+"'"+dato+"'"+"}";
 
-    //envia los datos a una cola que indica que ya se mando la notificacion
-    //ObjectMapper objectMapper = new ObjectMapper();
-    //String userNotiDataJson = objectMapper.writeValueAsString(userNotificationData);
+    String json= "{'id_solicitud':"+"'"+dato+"'"+"}";
 
     rabbitTemplate.convertAndSend(directExchange.getName(),"notifications_result_queue",json);
 

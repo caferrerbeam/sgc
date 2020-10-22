@@ -5,6 +5,8 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import org.json.JSONObject;
+
 import javax.print.DocFlavor;
 
 @Component
@@ -29,14 +31,20 @@ public class NotificationsQueueListener {
   public void receiveNotificationCommand(String message) throws Exception {
     //System.out.println("este es el mensaje que se recive de la cola notifications_queue :"+message);
 
-    String asunto = "Notificacion de Solicitud";
-    String[] parts = message.split(":");
-    Long user_id = Long.parseLong(parts[1].substring(1,parts[1].length()-13));
-    String mensaje = parts[2].substring(1,parts[2].length()-23);
-    Long borrow_request_id = Long.parseLong(parts[3].substring(1,parts[3].length()-4));
-    System.out.println("esta es la parte uno user_id : "+user_id);
-    System.out.println("esta es la parte dos message : "+mensaje);
-    System.out.println("esta es la parte tres borrow_request_id : "+ borrow_request_id);
+    String asunto = "Notificacion de Solicitud del Prestamo";
+    // String[] parts = message.split(":");
+    //Long user_id = Long.parseLong(parts[1].substring(1,parts[1].length()-13));
+    //String mensaje = parts[2].substring(1,parts[2].length()-23);
+    //Long borrow_request_id = Long.parseLong(parts[3].substring(1,parts[3].length()-4));
+    //System.out.println("esta es la parte uno user_id : "+user_id);
+    //System.out.println("esta es la parte dos message : "+mensaje);
+    //System.out.println("esta es la parte tres borrow_request_id : "+ borrow_request_id);
+
+    ///nuevo metodo probrar
+    JSONObject jsonMessage = new JSONObject(message);
+    Long user_id = jsonMessage.getLong("user_id");
+    String mensaje = jsonMessage.getString("message");
+    Long borrow_request_id = jsonMessage.getLong("borrow_request_id");
 
     //metodo para verificar el correo
     notificatorService.notifyBorrowRequestToUser(user_id,mensaje,asunto,borrow_request_id);
