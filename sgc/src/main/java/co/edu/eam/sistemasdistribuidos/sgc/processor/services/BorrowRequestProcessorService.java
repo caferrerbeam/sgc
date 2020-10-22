@@ -1,11 +1,19 @@
 package co.edu.eam.sistemasdistribuidos.sgc.processor.services;
 
 import co.edu.eam.sistemasdistribuidos.sgc.core.models.BorrowRequest;
+import co.edu.eam.sistemasdistribuidos.sgc.core.repositories.BorrowRequestRepository;
+import co.edu.eam.sistemasdistribuidos.sgc.processor.producers.ProcessorQueueProducer;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class BorrowRequestProcessorService {
 
+  @Autowired
+  private BorrowRequestRepository borrowRequestRepository;
+
+  @Autowired
+  private ProcessorQueueProducer processorQueueProducer;
   /**
    * metodo para revisar si se aprueba o no el credito, despues de estudiarlo
    * debe notificar el resultado por la cola de notificacion y actualizar si esta aprobado o no.
@@ -17,7 +25,21 @@ public class BorrowRequestProcessorService {
    * @return
    */
   public boolean processRequest(BorrowRequest request) {
-    return false;
+    Boolean isApproved=false;
+
+    if(request.getMonthsSeniority() < 6
+            || request.getSalary() < ((request.getAmount()/request.getInstallment())*0.30d)
+            || request.getAmount() <= (request.getSalary()*20)){
+
+      request.setStatus("rejected");
+    }else{
+      request.setStatus("approved");
+      isApproved=true;
+    }
+    update(request.getId(), request);
+    processorQueueProducer.notifiedBorrowResult(request);
+
+    return isApproved;
   }
 
   /**
@@ -26,5 +48,14 @@ public class BorrowRequestProcessorService {
    */
   public void setAsNotified(Long requestId) {
 
+  }
+
+  public void update(Long id, BorrowRequest r){
+    boolean request = borrowRequestRepository.existsById(id);
+    if(!request)
+      throw new RuntimeException("No existe una solicitud con ID: "+id);
+
+    r.setId(id);
+    borrowRequestRepository.save(r);
   }
 }
