@@ -14,5 +14,6 @@ public class ProcessorQueueProducer {
    */
   public void notifyBorrowRequestNotification(/*el tupo de dato lo definen uds aqui*/) {
     //enviar como json el BorrowRequest
+
   }
 }

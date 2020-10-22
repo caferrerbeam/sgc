@@ -1,9 +1,6 @@
 package co.edu.eam.sistemasdistribuidos.borrownotificator.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Table(name = "users_notification_data")
@@ -11,9 +8,9 @@ import java.io.Serializable;
 public class UserNotificationData implements Serializable {
 
   @Id
-  @GeneratedValue
   private Long id;
 
+  @Column(name="mobile_number")
   private String mobileNumber;
 
   private String email;
