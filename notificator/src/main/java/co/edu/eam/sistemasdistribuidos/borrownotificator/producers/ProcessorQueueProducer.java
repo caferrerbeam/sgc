@@ -2,6 +2,7 @@ package co.edu.eam.sistemasdistribuidos.borrownotificator.producers;
 
 
 
+import org.json.JSONObject;
 import org.springframework.amqp.core.DirectExchange;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,16 +26,17 @@ public class ProcessorQueueProducer {
   private DirectExchange directExchange;
 
   /*el tipo de dato lo definen uds aqui  UserNotificationData userNotificationData*/
-  public void notifyBorrowRequestNotification( long dato ) throws Exception {
+  public void notifyBorrowRequestNotification( Long dato ) throws Exception {
     //enviar como json el BorrowRequest
     //este metodo lo podria usar en el servicio que consulta los datos de la bd en notificatorService
     // con esta forma ProcessorQueueProducer.notifyBorrowRequestNotification(e ingresa el parametro del service);
     //el parametro se obtiene hay en el notificatorService
 
-
-    String json= "{'id_solicitud':"+"'"+dato+"'"+"}";
-
-    rabbitTemplate.convertAndSend(directExchange.getName(),"notifications_result_queue",json);
+    JSONObject jsonMessage = new JSONObject();
+    jsonMessage.put("id_solicitud",dato);
+    //String json= "{'id_solicitud':"+"'"+dato+"'"+"}";
+                //notifications_result_queue
+    rabbitTemplate.convertAndSend(directExchange.getName(),"notifications_result",jsonMessage.toString());
 
   }
 }

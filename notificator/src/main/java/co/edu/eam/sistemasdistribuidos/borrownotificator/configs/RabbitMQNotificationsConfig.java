@@ -30,16 +30,16 @@ public class RabbitMQNotificationsConfig {
     }
 
     @Bean
-    public Binding bindDirectExchangeNotifications_result_queue(Queue notificationsResultQueue,DirectExchange directExchange){
+    public Binding bindDirectExchangeNotificationsResultQueue(Queue notificationsResultQueue,DirectExchange directExchange){
 
-        return BindingBuilder.bind(notificationsResultQueue).to(directExchange).with("notifications_result_queue") ;
+        return BindingBuilder.bind(notificationsResultQueue).to(directExchange).with("notifications_result") ;
     }
 
     //metodo que conecta la cola que se consume
     @Bean
     public Binding bindDirectExchangeNotificationsQueue(Queue notificationsQueue,DirectExchange directExchange){
 
-       return BindingBuilder.bind(notificationsQueue).to(directExchange).with("notifications_queue") ;
+       return BindingBuilder.bind(notificationsQueue).to(directExchange).with("notifications") ;
     }
 
 }
