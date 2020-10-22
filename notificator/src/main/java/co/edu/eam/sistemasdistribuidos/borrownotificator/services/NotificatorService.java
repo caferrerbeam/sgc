@@ -44,7 +44,7 @@ public class NotificatorService {
     }
     }
     System.out.println("el numero no esta vacio ? "+!numero.isEmpty());
-    //funciona solo con numeros que esten verificados en Twilio si no estan no funciona
+    // funciona solo con numeros que esten verificados en Twilio si no estan no funciona s
     if(!numero.isEmpty()){
       System.out.println("enviando sms");
       try {
