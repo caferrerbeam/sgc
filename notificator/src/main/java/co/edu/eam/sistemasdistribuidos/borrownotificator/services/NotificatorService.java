@@ -54,8 +54,6 @@ public class NotificatorService {
       }
     }
     processorQueueProducer.notifyBorrowRequestNotification(borrow_request_id);
-
-
   }
 
 }
