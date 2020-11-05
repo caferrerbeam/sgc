@@ -28,6 +28,7 @@ public class ProcessorQueueProducer {
   /*el tipo de dato lo definen uds aqui  UserNotificationData userNotificationData*/
   public void notifyBorrowRequestNotification( Long dato ) throws Exception {
     //enviar como json el BorrowRequest
+
     //este metodo lo podria usar en el servicio que consulta los datos de la bd en notificatorService
     // con esta forma ProcessorQueueProducer.notifyBorrowRequestNotification(e ingresa el parametro del service);
     //el parametro se obtiene hay en el notificatorService
@@ -37,6 +38,5 @@ public class ProcessorQueueProducer {
     //String json= "{'id_solicitud':"+"'"+dato+"'"+"}";
                 //notifications_result_queue
     rabbitTemplate.convertAndSend(directExchange.getName(),"notifications_result",jsonMessage.toString());
-
   }
 }
