@@ -14,18 +14,19 @@ public class BorrowRequest implements Serializable {
   /**
    * id del usuario que hace el prestamo, debe existir en la bd de usuarios
    */
-  @Column(name="user_id")
+  @Column(name = "user_id")
   private Long userId;
 
   /**
    * salario actual
    */
+  @Column(name = "salary")
   private Double salary;
 
   /**
    * antiguedad en meses en el empleo actual
    */
-  @Column(name="months_seniority")
+  @Column(name = "months_seniority")
   private Integer monthsSeniority;
 
   /**
@@ -117,5 +118,4 @@ public class BorrowRequest implements Serializable {
   public void setNotified(Boolean notified) {
     this.notified = notified;
   }
-
 }

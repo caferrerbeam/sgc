@@ -24,5 +24,4 @@ public class RabbitMQRequestConfig {
     public Binding bindDirectExchangeBorrowProcessQueue(Queue borrowProcessQueue, DirectExchange directExchange){
         return BindingBuilder.bind(borrowProcessQueue).to(directExchange).with("borrow_process");
     }
-
 }

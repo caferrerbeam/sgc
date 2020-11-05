@@ -20,9 +20,14 @@ public class BorrowRequestService {
    * @param borrow
    */
   public void studyBorrow(BorrowRequest borrow) throws Exception{
-
       requestQueueProducer.sendBorrowRequest(borrowRequestRepository.save(borrow));
-
   }
 
+  public BorrowRequest find(Long id){
+    boolean request = borrowRequestRepository.existsById(id);
+    if(!request)
+      throw new RuntimeException("No existe una solicitud con ID: "+id);
+
+    return borrowRequestRepository.findById(id).get();
+  }
 }
