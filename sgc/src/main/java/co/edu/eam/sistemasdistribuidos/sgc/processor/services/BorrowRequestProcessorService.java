@@ -14,6 +14,7 @@ public class BorrowRequestProcessorService {
 
   @Autowired
   private ProcessorQueueProducer processorQueueProducer;
+
   /**
    * metodo para revisar si se aprueba o no el credito, despues de estudiarlo
    * debe notificar el resultado por la cola de notificacion y actualizar si esta aprobado o no.
@@ -47,8 +48,11 @@ public class BorrowRequestProcessorService {
    * @param requestId
    */
   public void setAsNotified(Long requestId) {
-
+    BorrowRequest notifiedBorrow = borrowRequestRepository.findById(requestId).get();
+    notifiedBorrow.setNotified(true);
+    borrowRequestRepository.save(notifiedBorrow);
   }
+
 
   public void update(Long id, BorrowRequest r){
     boolean request = borrowRequestRepository.existsById(id);

@@ -110,6 +110,13 @@ Este examen esta pensado para 4 personas y las asignaciones son:
 
 
 
+### Flujo creacion usuario
+![Flujo creacion usuario](flujo-usuario.png)
+
+
+
+
+
 
 
 

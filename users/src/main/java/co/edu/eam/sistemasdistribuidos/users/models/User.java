@@ -1,9 +1,6 @@
 package co.edu.eam.sistemasdistribuidos.users.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Table(name = "users")
@@ -16,8 +13,10 @@ public class User implements Serializable {
 
   private String name;
 
+  @Column(name = "last_name")
   private String lastName;
 
+  @Column(name="mobile_number")
   private String mobileNumber;
 
   private String email;

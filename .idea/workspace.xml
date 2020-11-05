@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="db565223-902e-4a54-9a88-d30abc00527e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/sgc/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/sgc/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sgc/src/main/java/co/edu/eam/sistemasdistribuidos/sgc/core/models/BorrowRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/sgc/src/main/java/co/edu/eam/sistemasdistribuidos/sgc/core/models/BorrowRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sgc/src/main/java/co/edu/eam/sistemasdistribuidos/sgc/core/repositories/BorrowRequestRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/sgc/src/main/java/co/edu/eam/sistemasdistribuidos/sgc/core/repositories/BorrowRequestRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sgc/src/main/java/co/edu/eam/sistemasdistribuidos/sgc/processor/configs/RabbitMQProcessorConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/sgc/src/main/java/co/edu/eam/sistemasdistribuidos/sgc/processor/configs/RabbitMQProcessorConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sgc/src/main/java/co/edu/eam/sistemasdistribuidos/sgc/processor/consumers/ProcessorQueueListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/sgc/src/main/java/co/edu/eam/sistemasdistribuidos/sgc/processor/consumers/ProcessorQueueListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sgc/src/main/java/co/edu/eam/sistemasdistribuidos/sgc/processor/services/BorrowRequestProcessorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sgc/src/main/java/co/edu/eam/sistemasdistribuidos/sgc/processor/services/BorrowRequestProcessorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sgc/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/sgc/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/src/main/java/co/edu/eam/sistemasdistribuidos/users/configs/RabbitMQConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/users/src/main/java/co/edu/eam/sistemasdistribuidos/users/configs/RabbitMQConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/src/main/java/co/edu/eam/sistemasdistribuidos/users/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/users/src/main/java/co/edu/eam/sistemasdistribuidos/users/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/src/main/java/co/edu/eam/sistemasdistribuidos/users/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/users/src/main/java/co/edu/eam/sistemasdistribuidos/users/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/src/main/java/co/edu/eam/sistemasdistribuidos/users/producers/UsersQueueProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/users/src/main/java/co/edu/eam/sistemasdistribuidos/users/producers/UsersQueueProducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/src/main/java/co/edu/eam/sistemasdistribuidos/users/repositories/USerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/users/src/main/java/co/edu/eam/sistemasdistribuidos/users/repositories/USerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/src/main/java/co/edu/eam/sistemasdistribuidos/users/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/users/src/main/java/co/edu/eam/sistemasdistribuidos/users/services/UserService.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2.2\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1jEsEpehWniYZlCUNKlKBcj9Dg9" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="db565223-902e-4a54-9a88-d30abc00527e" name="Default Changelist" comment="" />
+      <created>1603380477343</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1603380477343</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1603381790014">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1603381790014" />
+  </component>
+</project>
