@@ -95,4 +95,12 @@ public class BorrowRequest implements Serializable {
   public void setAmount(Double amount) {
     this.amount = amount;
   }
+
+  public Boolean getNotified() {
+    return notified;
+  }
+
+  public void setNotified(Boolean notified) {
+    this.notified = notified;
+  }
 }

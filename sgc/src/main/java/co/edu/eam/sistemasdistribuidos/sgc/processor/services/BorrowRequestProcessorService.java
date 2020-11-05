@@ -1,10 +1,15 @@
 package co.edu.eam.sistemasdistribuidos.sgc.processor.services;
 
 import co.edu.eam.sistemasdistribuidos.sgc.core.models.BorrowRequest;
+import co.edu.eam.sistemasdistribuidos.sgc.core.repositories.BorrowRequestRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class BorrowRequestProcessorService {
+
+  @Autowired
+  private BorrowRequestRepository borrowRequestRepository;
 
   /**
    * metodo para revisar si se aprueba o no el credito, despues de estudiarlo
@@ -25,6 +30,9 @@ public class BorrowRequestProcessorService {
    * @param requestId
    */
   public void setAsNotified(Long requestId) {
-
+    BorrowRequest notifiedBorrow = borrowRequestRepository.findById(requestId).get();
+    notifiedBorrow.setNotified(true);
+    borrowRequestRepository.save(notifiedBorrow);
   }
+
 }
