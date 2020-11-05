@@ -1,10 +1,6 @@
 package co.edu.eam.sistemasdistribuidos.sgc.core.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
@@ -18,16 +14,19 @@ public class BorrowRequest implements Serializable {
   /**
    * id del usuario que hace el prestamo, debe existir en la bd de usuarios
    */
+  @Column(name = "user_id")
   private Long userId;
 
   /**
    * salario actual
    */
+  @Column(name = "salary")
   private Double salary;
 
   /**
    * antiguedad en meses en el empleo actual
    */
+  @Column(name = "months_seniority")
   private Integer monthsSeniority;
 
   /**
@@ -94,6 +93,22 @@ public class BorrowRequest implements Serializable {
 
   public void setAmount(Double amount) {
     this.amount = amount;
+  }
+
+  public Integer getInstallment() {
+    return installment;
+  }
+
+  public void setInstallment(Integer installment) {
+    this.installment = installment;
+  }
+
+  public String getStatus() {
+    return status;
+  }
+
+  public void setStatus(String status) {
+    this.status = status;
   }
 
   public Boolean getNotified() {
