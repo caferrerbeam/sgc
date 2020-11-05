@@ -13,6 +13,7 @@ public class UserNotificationData implements Serializable {
   @Id
   private Long id;
 
+
   private String mobileNumber;
 
   private String email;

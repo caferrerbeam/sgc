@@ -108,8 +108,7 @@ Este examen esta pensado para 4 personas y las asignaciones son:
 
 ## Diagrama de secuencia
 
-### Flujo solicitud prestamo
-![Flujo solicitud prestamo](flujo-prestamo.png)
+
 
 ### Flujo creacion usuario
 ![Flujo creacion usuario](flujo-usuario.png)
