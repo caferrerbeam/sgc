@@ -11,8 +11,8 @@ import java.io.Serializable;
 public class UserNotificationData implements Serializable {
 
   @Id
-  @GeneratedValue
   private Long id;
+
 
   private String mobileNumber;
 

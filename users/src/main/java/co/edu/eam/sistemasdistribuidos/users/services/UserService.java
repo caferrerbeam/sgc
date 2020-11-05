@@ -20,4 +20,14 @@ public class UserService {
         uSerRepository.save(user);
         usersQueueProducer.notifyUserCreation(user);
     }
+
+    //estudiante 4   buscar por id
+    public User buscar(long id) {
+        //verifico si existe el id
+        boolean userExist = USerRepository.existsById(id);
+        if (!userExist) throw  new RuntimeException("no existe el usuario");
+        //busco los datos y con el get lo obtengo
+        return USerRepository.findById(id).get();
+    }
+
 }
